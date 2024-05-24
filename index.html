@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Module</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 50%; margin: 0 auto; }
+        h1 { text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select, button { width: 100%; padding: 10px; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart Discount Module</h1>
+        <div class="form-group">
+            <label for="item-name">Item Name</label>
+            <input type="text" id="item-name">
+        </div>
+        <div class="form-group">
+            <label for="item-category">Category</label>
+            <input type="text" id="item-category">
+        </div>
+        <div class="form-group">
+            <label for="item-price">Price</label>
+            <input type="number" id="item-price">
+        </div>
+        <button onclick="addItem()">Add Item</button>
+        
+        <h2>Discounts</h2>
+        <div class="form-group">
+            <label for="discount-type">Discount Type</label>
+            <select id="discount-type">
+                <option value="Fixed amount">Fixed amount</option>
+                <option value="Percentage discount">Percentage discount</option>
+                <option value="Percentage discount by item category">Percentage discount by item category</option>
+                <option value="Discount by points">Discount by points</option>
+                <option value="Special campaigns">Special campaigns</option>
+            </select>
+        </div>
+        <div class="form-group" id="discount-parameters"></div>
+        <button onclick="addDiscount()">Add Discount</button>
+        
+        <h2>Shopping Cart</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <h2>Discounts Applied</h2>
+        <table id="discount-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Parameters</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <button onclick="calculateFinalPrice()">Calculate Final Price</button>
+        <h2 id="final-price">Final Price: </h2>
+    </div>
+
+    <script src="discountModule.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
